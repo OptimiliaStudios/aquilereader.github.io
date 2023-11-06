@@ -604,6 +604,21 @@ a:hover {
 	color: #fff;
 	background: #020E13;
 }
+.mapLinks ul {
+	padding: 0;
+	list-style: none;
+}
+.mapLinks li {
+	display: inline-block;
+	padding-right: .3em;
+}
+.mapLinks li a {
+	display: block;
+	color: "#020E13";
+	margin-left: 24px;
+	margin-right: 24px;
+}
+  
 .scrollToTop{
 	width: 40px; 
 	height: 40px;
@@ -1031,5 +1046,4 @@ and (orientation : landscape) {
 	.action h2 {
 		margin: 70px 0 20px;
 	}
-
 }
