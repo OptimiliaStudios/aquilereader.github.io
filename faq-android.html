@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FAQ - Android</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- CSS Files -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Colors -->
+    <link href="css/styles.css" rel="stylesheet" media="screen">
+
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+    <div id="top"></div>
+
+    <!-- /.parallax full screen background image -->
+    <div class="fullscreen landing parallax" style="background-image:url('images/bg.jpg');" data-img-width="2000"
+        data-img-height="1000" data-diff="100">
+
+        <div class="overlay">
+            <div class="container">
+                <div class="col-md-10 col-md-offset-1 text-center">
+                    <p></p>
+                    <h2 class="wow fadeInUp" style="color: white;">Frequently Asked Questions - Android</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <input type="text" id="search" placeholder="Search FAQs..." onkeyup="searchFAQs()" />
+
+    <div id="faq-list">
+        <div class="faq-item">
+            <div class="faq-question">How to add annotations (highlight, note, bookmark) in the book?</div>
+            <div class="faq-answer">Click on "Forgot password" at the login screen and follow the instructions.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">How to use Read Aloud (TTS) feature?</div>
+            <div class="faq-answer">Go to your account settings and click on "Order History".</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">How to change the dictionary?</div>
+            <div class="faq-answer">Use the "Contact Us" link at the bottom of the page.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Dictionary always returns No definition found.</div>
+            <div class="faq-answer">Use the "Contact Us" link at the bottom of the page.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">How to enable cloud sync?</div>
+            <div class="faq-answer">Use the "Contact Us" link at the bottom of the page.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">My some books are not getting synced, how to fix it?</div>
+            <div class="faq-answer">Use the "Contact Us" link at the bottom of the page.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">My some books are not getting synced, how to fix it?</div>
+            <div class="faq-answer">Use the "Contact Us" link at the bottom of the page.</div>
+        </div>
+        <div class="faq-item" id="sync-err">
+            <div class="faq-question">My some books are not getting synced, how to fix it?</div>
+            <div class="faq-answer">Use the "Contact Us" link at the bottom of the page.</div>
+        </div>
+    </div>
+</body>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f9f9f9;
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    input[type="text"] {
+        width: calc(100% - 4em);
+        box-sizing: border-box;
+        padding: 0.5em;
+        margin: 2em;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        font-size: 1em;
+    }
+
+    .faq-item {
+        background: white;
+        margin-bottom: 1em;
+        padding: 1em;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .faq-question {
+        font-weight: bold;
+        margin-bottom: 0.5em;
+    }
+
+    #faq-list
+    {
+        margin: 0em 2em 2em 2em;
+    }
+</style>
+
+<script>
+    function searchFAQs() {
+        const input = document.getElementById("search").value.toLowerCase();
+        const items = document.getElementsByClassName("faq-item");
+        Array.from(items).forEach(item => {
+            const text = item.textContent.toLowerCase();
+            item.style.display = text.includes(input) ? "block" : "none";
+        });
+    }
+</script>
+
+</html>
