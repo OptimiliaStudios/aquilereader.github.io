@@ -39,35 +39,49 @@
     <div id="faq-list">
         <div class="faq-item">
             <div class="faq-question">How to add annotations (highlight, note, bookmark) in the book?</div>
-            <div class="faq-answer">Click on "Forgot password" at the login screen and follow the instructions.</div>
+            <div class="faq-answer">placeholder</div>
         </div>
         <div class="faq-item">
             <div class="faq-question">How to use Read Aloud (TTS) feature?</div>
-            <div class="faq-answer">Go to your account settings and click on "Order History".</div>
+            <div class="faq-answer">placeholder</div>
         </div>
         <div class="faq-item">
             <div class="faq-question">How to change the dictionary?</div>
-            <div class="faq-answer">Use the "Contact Us" link at the bottom of the page.</div>
+            <div class="faq-answer">placeholder</div>
         </div>
         <div class="faq-item">
-            <div class="faq-question">Dictionary always returns No definition found.</div>
-            <div class="faq-answer">Use the "Contact Us" link at the bottom of the page.</div>
+            <div class="faq-question">Dictionary always returns 'No definition found'.</div>
+            <div class="faq-answer">If you are experiencing issues with the current dictionary, try switching to a
+                different one. The Wiktionary-based dictionary tends to be more reliable in most cases.<br>Steps to
+                change the dictionary are highlighted in the steps below.
+                <div class="faq-img-row">
+                    <img src="images/faq/dict-1.png" alt="Dictionary Step 1">
+                    <img src="images/faq/dict-2.png" alt="Dictionary Step 2">
+                </div>
+            </div>
         </div>
         <div class="faq-item">
             <div class="faq-question">How to enable cloud sync?</div>
-            <div class="faq-answer">Use the "Contact Us" link at the bottom of the page.</div>
+            <div class="faq-answer">placeholder</div>
         </div>
         <div class="faq-item">
             <div class="faq-question">My some books are not getting synced, how to fix it?</div>
-            <div class="faq-answer">Use the "Contact Us" link at the bottom of the page.</div>
+            <div class="faq-answer">placeholder</div>
         </div>
-        <div class="faq-item">
-            <div class="faq-question">My some books are not getting synced, how to fix it?</div>
-            <div class="faq-answer">Use the "Contact Us" link at the bottom of the page.</div>
-        </div>
-        <div class="faq-item" id="sync-err">
-            <div class="faq-question">My some books are not getting synced, how to fix it?</div>
-            <div class="faq-answer">Use the "Contact Us" link at the bottom of the page.</div>
+        <div class="faq-item" id="prem-diff">
+            <div class="faq-question">Why do I have to purchase different premium version for Android and Windows
+                devices families?</div>
+            <div class="faq-answer">Both Google Play and Microsoft Store enforces in-app purchases to be processed
+                through their respective platforms. This means we're not permitted to offer a custom single payment
+                method that works across both platforms. And unfortunately, there's currently no mechanism to sync
+                purchases between Android and Windows, hence premium version is platform-specific.<br>We understand this
+                might not be ideal, and we're exploring ways to make this process smoother in the future. For now, if
+                you'd like to use premium features on both Android and Windows, a separate purchase is required for each
+                platform.<br>That said, once you've made a purchase on Android, it will be available across all your
+                Android devices using the same account. Similarly, one purchase on Windows unlocks premium features
+                across all your Windows devices linked to that account.<br>We appreciate your understanding and support!
+                If you have any questions or need help, feel free to reach out to our support team.
+            </div>
         </div>
     </div>
 </body>
@@ -83,10 +97,10 @@
     }
 
     input[type="text"] {
-        width: calc(100% - 4em);
+        width: calc(100% - 2em);
         box-sizing: border-box;
         padding: 0.5em;
-        margin: 2em;
+        margin: 1em;
         border-radius: 5px;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
         font-size: 1em;
@@ -96,19 +110,36 @@
         background: white;
         margin-bottom: 1em;
         padding: 1em;
-        border-radius: 5px;
+        border-radius: 6px;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     }
 
     .faq-question {
         font-weight: bold;
         margin-bottom: 0.5em;
+        color: black;
     }
 
-    #faq-list
-    {
-        margin: 0em 2em 2em 2em;
+    #faq-list {
+        margin: 0em 1em 1em 1em;
     }
+
+    .faq-img-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2em;
+        margin: 2em 0;
+    }
+
+    .faq-img-row img {
+        max-width: 250px;
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+    }
+
 </style>
 
 <script>
