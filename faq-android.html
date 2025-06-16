@@ -34,26 +34,27 @@
         </div>
     </div>
 
-    <input type="text" id="search" placeholder="Search FAQs..." onkeyup="searchFAQs()" />
+    <div style="position: relative; width: 100%;" id="search">
+        <input type="text" id="searchBox" placeholder="Search FAQs..." onkeyup="searchFAQs()"
+            style="padding-right: 2.5em;" />
+        <button type="button" id="clear-search" onclick="clearSearch()"
+            style="position: absolute; right: 1.5em; top: 50%; transform: translateY(-50%); background: transparent; border: none; font-size: 1.4em; cursor: pointer; color: #888;">&times;</button>
+    </div>
 
     <div id="faq-list">
         <div class="faq-item">
             <div class="faq-question">How to add annotations (highlight, note, bookmark) in the book?</div>
-            <div class="faq-answer">placeholder</div>
+            <div class="faq-answer">...</div>
         </div>
         <div class="faq-item">
             <div class="faq-question">How to use Read Aloud (TTS) feature?</div>
-            <div class="faq-answer">placeholder</div>
+            <div class="faq-answer">...</div>
         </div>
         <div class="faq-item">
-            <div class="faq-question">How to change the dictionary?</div>
-            <div class="faq-answer">placeholder</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">Dictionary always returns 'No definition found'.</div>
+            <div class="faq-question">Dictionary always returns 'No definition found'.<br>How to change the dictionary?</div>
             <div class="faq-answer">If you are experiencing issues with the current dictionary, try switching to a
-                different one. The Wiktionary-based dictionary tends to be more reliable in most cases.<br>Steps to
-                change the dictionary are highlighted in the steps below.
+                different one. The Wiktionary-based dictionary tends to be more reliable in most cases.<br><br>Steps to
+                change the dictionary are described with screenshots below.
                 <div class="faq-img-row">
                     <img src="images/faq/dict-1.png" alt="Dictionary Step 1">
                     <img src="images/faq/dict-2.png" alt="Dictionary Step 2">
@@ -62,11 +63,7 @@
         </div>
         <div class="faq-item">
             <div class="faq-question">How to enable cloud sync?</div>
-            <div class="faq-answer">placeholder</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">My some books are not getting synced, how to fix it?</div>
-            <div class="faq-answer">placeholder</div>
+            <div class="faq-answer">...</div>
         </div>
         <div class="faq-item" id="prem-diff">
             <div class="faq-question">Why do I have to purchase different premium version for Android and Windows
@@ -74,12 +71,12 @@
             <div class="faq-answer">Both Google Play and Microsoft Store enforces in-app purchases to be processed
                 through their respective platforms. This means we're not permitted to offer a custom single payment
                 method that works across both platforms. And unfortunately, there's currently no mechanism to sync
-                purchases between Android and Windows, hence premium version is platform-specific.<br>We understand this
+                purchases between Android and Windows, hence premium version is platform-specific.<br><br>We understand this
                 might not be ideal, and we're exploring ways to make this process smoother in the future. For now, if
                 you'd like to use premium features on both Android and Windows, a separate purchase is required for each
-                platform.<br>That said, once you've made a purchase on Android, it will be available across all your
+                platform.<br><br>That said, once you've made a purchase on Android, it will be available across all your
                 Android devices using the same account. Similarly, one purchase on Windows unlocks premium features
-                across all your Windows devices linked to that account.<br>We appreciate your understanding and support!
+                across all your Windows devices linked to that account.<br><br>We appreciate your understanding and support!
                 If you have any questions or need help, feel free to reach out to our support team.
             </div>
         </div>
@@ -126,10 +123,14 @@
 
     .faq-img-row {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
         gap: 2em;
         margin: 2em 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        scrollbar-color: #ccc #f9f9f9;
     }
 
     .faq-img-row img {
@@ -138,18 +139,23 @@
         height: auto;
         border-radius: 8px;
         box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+        flex: 0 0 auto;
     }
-
 </style>
 
 <script>
     function searchFAQs() {
-        const input = document.getElementById("search").value.toLowerCase();
+        const input = document.getElementById("searchBox").value.toLowerCase();
         const items = document.getElementsByClassName("faq-item");
         Array.from(items).forEach(item => {
             const text = item.textContent.toLowerCase();
             item.style.display = text.includes(input) ? "block" : "none";
         });
+    }
+
+    function clearSearch() {
+        document.getElementById("searchBox").value = "";
+        searchFAQs();
     }
 </script>
 
