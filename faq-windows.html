@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FAQ - Windows</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- CSS Files -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Colors -->
+    <link href="css/styles.css" rel="stylesheet" media="screen">
+
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+    <div id="top"></div>
+
+    <!-- /.parallax full screen background image -->
+    <div class="fullscreen landing parallax" style="background-image:url('images/bg.jpg');" data-img-width="2000"
+        data-img-height="1000" data-diff="100">
+
+        <div class="overlay">
+            <div class="container">
+                <div class="col-md-10 col-md-offset-1 text-center">
+                    <p></p>
+                    <h2 class="wow fadeInUp" style="color: white;">Frequently Asked Questions - Windows</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="position: relative; width: 100%;" id="search">
+        <input type="text" id="searchBox" placeholder="Search FAQs..." onkeyup="searchFAQs()"
+            style="padding-right: 2.5em;" />
+        <button type="button" id="clear-search" onclick="clearSearch()"
+            style="position: absolute; right: 1.5em; top: 50%; transform: translateY(-50%); background: transparent; border: none; font-size: 1.4em; cursor: pointer; color: #888;">&times;</button>
+    </div>
+
+    <div id="faq-list">
+        <div class="faq-item" id="csync1">
+            <div class="faq-question">› How Cloud Sync works?<br>› How to enable/configure cloud sync to sync books across Android and Windows devices?</div>
+            <div class="faq-answer">Cloud Sync is a powerful tool to sync books across devices and platforms. The video below gives a detailed walkthrough of how cloud sync works and how to configure it correctly.</div>
+            <div style="margin-top:1em;">
+                <div style="width:100%; max-width:560px;">
+                    <div style="position:relative; width:100%; padding-top:56.25%; max-height:315px;">
+                        <iframe src="https://www.youtube.com/embed/RsVC-5wOUZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute; top:0; left:0; width:100%; height:100%; max-height:315px; border-radius:10px;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="faq-item" id="prem-diff">
+            <div class="faq-question">› Why do I have to purchase different premium version for Android and Windows
+                devices families?</div>
+            <div class="faq-answer">Both Google Play and Microsoft Store enforces in-app purchases to be processed
+                through their respective platforms. This means we're not permitted to offer a custom single payment
+                method that works across both platforms. And unfortunately, there's currently no mechanism to sync
+                purchases between Android and Windows, hence premium version is platform-specific.<br><br>We understand this
+                might not be ideal, and we're exploring ways to make this process smoother in the future. For now, if
+                you'd like to use premium features on both Android and Windows, a separate purchase is required for each
+                platform.<br><br>That said, once you've made a purchase on Android, it will be available across all your
+                Android devices using the same account. Similarly, one purchase on Windows unlocks premium features
+                across all your Windows devices linked to that account.<br><br>We appreciate your understanding and support!
+                If you have any questions or need help, feel free to reach out to our support team.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">› How to manually fetch for app update?</div>
+            <div class="faq-answer">
+                <ol>
+                    <li>Open the Microsoft Store app.</li>
+                    <li>Go to 'Downloads'.</li>
+                    <li>Click on 'Check for updates' to manually fetch for app updates, you should see Aquile Reader in the list of available updates.</li>
+                    <li>Now update the app by clicking on download icon next to it or click 'Update all' to download all the available updates.</li>
+                </ol>
+                <div class="faq-img-row">
+                    <img src="images/faq/update-1.png">
+                    <img src="images/faq/update-2.png">
+                    <img src="images/faq/update-3.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f9f9f9;
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    input[type="text"] {
+        width: calc(100% - 2em);
+        box-sizing: border-box;
+        padding: 0.5em;
+        margin: 1em;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        font-size: 1em;
+    }
+
+    .faq-item {
+        background: white;
+        margin-bottom: 1em;
+        padding: 1em;
+        border-radius: 6px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .faq-question {
+        font-weight: bold;
+        margin-bottom: 0.5em;
+        color: black;
+    }
+
+    #faq-list {
+        margin: 0em 1em 1em 1em;
+    }
+
+    .faq-img-row {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 2em;
+        margin: 2em 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        scrollbar-color: #ccc #f9f9f9;
+    }
+
+    .faq-img-row img {
+        max-width: 700px;
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+        flex: 0 0 auto;
+    }
+</style>
+
+<script>
+    function searchFAQs() {
+        const input = document.getElementById("searchBox").value.toLowerCase();
+        const items = document.getElementsByClassName("faq-item");
+        Array.from(items).forEach(item => {
+            const text = item.textContent.toLowerCase();
+            item.style.display = text.includes(input) ? "block" : "none";
+        });
+    }
+
+    function clearSearch() {
+        document.getElementById("searchBox").value = "";
+        searchFAQs();
+    }
+
+    // Enable horizontal scroll with mouse wheel on .faq-img-row
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('.faq-img-row').forEach(function(row) {
+            row.addEventListener('wheel', function(e) {
+                if (e.deltaY !== 0) {
+                    const atStart = row.scrollLeft === 0;
+                    const atEnd = Math.abs(row.scrollLeft + row.clientWidth - row.scrollWidth) < 2;
+                    if ((e.deltaY < 0 && atStart) || (e.deltaY > 0 && atEnd)) {
+                        // Allow normal vertical scroll
+                        return;
+                    }
+                    e.preventDefault();
+                    row.scrollLeft += e.deltaY;
+                }
+            }, { passive: false });
+        });
+    });
+</script>
+
+</html>
