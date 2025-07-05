@@ -179,6 +179,18 @@
             }, { passive: false });
         });
     });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.faq-question').forEach(function(q) {
+            q.style.cursor = 'pointer';
+            q.addEventListener('click', function() {
+                var parent = q.closest('.faq-item');
+                if (parent && parent.id) {
+                    location.hash = '#' + parent.id;
+                }
+            });
+        });
+    });
 </script>
 
 </html>

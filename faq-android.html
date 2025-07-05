@@ -42,9 +42,40 @@
     </div>
 
     <div id="faq-list">
-        <div class="faq-item">
+        <div class="faq-item" id="annotations">
             <div class="faq-question">› How to add annotations (highlight, note, bookmark) in the book?</div>
-            <div class="faq-answer">...</div>
+            <div class="faq-answer">Once in the Reader, long press any word to open context menu with dictionary. Once the context menu is open, follow the steps to add annotations:
+                <ul>
+                    <li>Add highlight</li>
+                    <ul>
+                        <li>Using the text selection handle, select the desired text to highlight.</li>
+                        <li>Select the first icon 'Highlight' in the context menu.</li>
+                        <li>Choose the desired color to add highlight.</li>
+                    </ul>
+                    <li>Add note</li>
+                    <ul>
+                        <li>Using the text selection handle, select the desired text to want to add note to.</li>
+                        <li>Select the second icon 'Add Note' in the context menu.</li>
+                        <li>Add the desired note content.</li>
+                        <li>If you wish to change note color, click on the '3-dot' button to open color pane, and select the desired color of note.</li>
+                        <li>Click 'check' button to save the note.</li>
+                    </ul>
+                    <li>Add bookmark</li>
+                    <ul>
+                        <li>Select the third icon 'Add Bookmark' in the context menu to bookmark the current line.</li>
+                    </ul>
+                </ul>
+                <br>Tap on the center of the screen to bring the reader controls, then tap the desired icon to view the highlights, notes or bookmarks on the book.
+                <div class="faq-img-row">
+                    <img src="images/faq/ann-1.png">
+                    <img src="images/faq/ann-4.png">
+                    <img src="images/faq/ann-3.png">
+                    <img src="images/faq/ann-5.png">
+                    <img src="images/faq/ann-6.png">
+                    <img src="images/faq/ann-7.png">
+                    <img src="images/faq/ann-8.png">
+                </div>
+            </div>
         </div>
         <div class="faq-item">
             <div class="faq-question">› How to use Read Aloud (TTS) feature?</div>
@@ -164,6 +195,18 @@
         document.getElementById("searchBox").value = "";
         searchFAQs();
     }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.faq-question').forEach(function(q) {
+            q.style.cursor = 'pointer';
+            q.addEventListener('click', function() {
+                var parent = q.closest('.faq-item');
+                if (parent && parent.id) {
+                    location.hash = '#' + parent.id;
+                }
+            });
+        });
+    });
 </script>
 
 </html>
